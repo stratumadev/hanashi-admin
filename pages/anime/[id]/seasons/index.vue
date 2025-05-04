@@ -5,7 +5,7 @@
                 :to="`/anime/${route.params.id}`"
                 class="flex items-center justify-center gap-1 px-3 py-2.5 bg-[var(--tertiary)] hover:bg-[var(--secondary)] rounded-xl transition-all"
             >
-                <Icon name="raphael:arrowleft" class="h-3 w-3" />
+                <Icon mode="svg" name="raphael:arrowleft" class="h-3 w-3" />
                 Zurück
             </NuxtLink>
             <button
@@ -13,15 +13,15 @@
                 @click="importCrunchy()"
                 class="flex items-center justify-center gap-1 px-3 py-2.5 bg-[var(--tertiary)] hover:bg-[var(--secondary)] rounded-xl transition-all ml-auto"
             >
-                <Icon v-if="!isLoading" name="mdi:import" class="h-3 w-3" />
-                <Icon v-if="isLoading" name="mingcute:loading-3-fill" class="h-3 w-3 animate-spin" />
+                <Icon mode="svg" v-if="!isLoading" name="mdi:import" class="h-3 w-3" />
+                <Icon mode="svg" v-if="isLoading" name="mingcute:loading-3-fill" class="h-3 w-3 animate-spin" />
                 {{ isLoading ? 'Importing' : 'Crunchy Import' }}
             </button>
             <NuxtLink
                 :to="`/anime/${route.params.id}/seasons/create`"
                 class="flex items-center justify-center gap-1 px-3 py-2.5 bg-[var(--tertiary)] hover:bg-[var(--secondary)] rounded-xl transition-all ml-3"
             >
-                <Icon name="ic:baseline-plus" class="h-4 w-4" />
+                <Icon mode="svg" name="ic:baseline-plus" class="h-4 w-4" />
                 Erstellen
             </NuxtLink>
         </div>
@@ -42,14 +42,14 @@
                             @click="switchSeasons(season.id, seasons[i - 1].id)"
                             class="px-3 py-2 bg-[var(--main)] rounded-xl flex items-center justify-center"
                         >
-                            <Icon name="raphael:arrowup" class="h-4 w-4" />
+                            <Icon mode="svg" name="raphael:arrowup" class="h-4 w-4" />
                         </button>
                         <button
                             v-if="seasons[i + 1]"
                             @click="switchSeasons(season.id, seasons[i + 1].id)"
                             class="px-3 py-2 bg-[var(--main)] rounded-xl flex items-center justify-center"
                         >
-                            <Icon name="raphael:arrowdown" class="h-4 w-4" />
+                            <Icon mode="svg" name="raphael:arrowdown" class="h-4 w-4" />
                         </button>
                     </div>
                     <NuxtLink :to="`/anime/${route.params.id}/seasons/${season.id}`" class="text-sm flex-1 flex justify-center items-center">
@@ -59,12 +59,12 @@
                         {{ season.season_number }}
                     </NuxtLink>
                     <NuxtLink :to="`/anime/${route.params.id}/seasons/${season.id}`" class="absolute top-1/2 -translate-y-1/2 right-3">
-                        <Icon name="ion:open-outline" class="h-4 w-4" />
+                        <Icon mode="svg" name="ion:open-outline" class="h-4 w-4" />
                     </NuxtLink>
                 </div>
             </div>
             <div v-if="!seasons && isFetching" class="bg-[var(--secondary)] w-full h-96 flex flex-col gap-2 items-center justify-center rounded-xl appear">
-                <Icon name="mdi:loading" class="h-8 w-8 animate-spin" />
+                <Icon mode="svg" name="mdi:loading" class="h-8 w-8 animate-spin" />
                 <div class="text-sm">Bitte warten</div>
             </div>
         </div>

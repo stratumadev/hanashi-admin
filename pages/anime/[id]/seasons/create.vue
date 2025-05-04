@@ -5,22 +5,22 @@
                 :to="`/anime/${route.params.id}/seasons`"
                 class="flex items-center justify-center gap-1 px-3 py-2.5 bg-[var(--tertiary)] hover:bg-[var(--secondary)] rounded-xl transition-all"
             >
-                <Icon name="raphael:arrowleft" class="h-3 w-3" />
+                <Icon mode="svg" name="raphael:arrowleft" class="h-3 w-3" />
                 Zurück
             </NuxtLink>
             <button
                 @click="isAddDataSeasonActive = true"
                 class="flex items-center justify-center gap-1 px-3 py-2.5 bg-[var(--tertiary)] hover:bg-[var(--secondary)] rounded-xl transition-all ml-auto"
             >
-                <Icon name="mdi:import" class="h-3 w-3" />
+                <Icon mode="svg" name="mdi:import" class="h-3 w-3" />
                 Import
             </button>
             <button
                 @click="createSeason()"
                 class="flex items-center justify-center gap-1 px-3 py-2.5 bg-[var(--tertiary)] hover:bg-[var(--secondary)] rounded-xl transition-all ml-3"
             >
-                <Icon v-if="!isLoading" name="material-symbols:save-sharp" class="h-3 w-3" />
-                <Icon v-if="isLoading" name="mingcute:loading-3-fill" class="h-3 w-3 animate-spin" />
+                <Icon mode="svg" v-if="!isLoading" name="material-symbols:save-sharp" class="h-3 w-3" />
+                <Icon mode="svg" v-if="isLoading" name="mingcute:loading-3-fill" class="h-3 w-3 animate-spin" />
                 {{ isLoading ? 'Erstelle' : 'Erstellen' }}
             </button>
         </div>
@@ -36,7 +36,7 @@
                         </select>
                         <input v-model="n.name" class="w-full px-3 py-2.5 max-w-sm text-white bg-[var(--tertiary)] rounded-xl focus:outline-none" type="text" placeholder="Name" />
                         <button @click="deleteNameFromArray(n)" class="flex items-center justify-center text-white bg-[var(--tertiary)] w-20 h-10 rounded-xl">
-                            <Icon name="material-symbols:delete" class="h-4 w-4" />
+                            <Icon mode="svg" name="material-symbols:delete" class="h-4 w-4" />
                         </button>
                     </div>
                     <div class="relative w-full flex flex-row gap-2 max-w-xl">
@@ -52,7 +52,7 @@
                             placeholder="Name"
                         />
                         <button @click="addDummyNameToArray()" class="flex items-center justify-center text-white bg-[var(--tertiary)] w-20 h-10 rounded-xl">
-                            <Icon name="ic:baseline-plus" class="h-4 w-4" />
+                            <Icon mode="svg" name="ic:baseline-plus" class="h-4 w-4" />
                         </button>
                     </div>
                 </div>
@@ -97,7 +97,7 @@
                             placeholder="Offset"
                         />
                         <button @click="deleteReferenceFromArray(r)" class="flex items-center justify-center text-white bg-[var(--tertiary)] w-20 h-10 rounded-xl">
-                            <Icon name="material-symbols:delete" class="h-4 w-4" />
+                            <Icon mode="svg" name="material-symbols:delete" class="h-4 w-4" />
                         </button>
                     </div>
                     <div class="relative w-full flex flex-row gap-2 max-w-xl">
@@ -125,7 +125,7 @@
                             placeholder="Offset"
                         />
                         <button @click="addDummyReferenceToArray()" class="flex items-center justify-center text-white bg-[var(--tertiary)] w-20 h-10 rounded-xl">
-                            <Icon name="ic:baseline-plus" class="h-4 w-4" />
+                            <Icon mode="svg" name="ic:baseline-plus" class="h-4 w-4" />
                         </button>
                     </div>
                 </div>

@@ -5,7 +5,7 @@
                 :to="`/anime/${route.params.id}/seasons/${route.params.season}/episodes`"
                 class="flex items-center justify-center gap-1 px-3 py-2.5 bg-[var(--tertiary)] hover:bg-[var(--secondary)] rounded-xl transition-all"
             >
-                <Icon name="raphael:arrowleft" class="h-3 w-3" />
+                <Icon mode="svg" name="raphael:arrowleft" class="h-3 w-3" />
                 Zurück
             </NuxtLink>
             <button
@@ -13,8 +13,8 @@
                 @click="massUpload()"
                 class="flex items-center justify-center gap-1 px-3 py-2.5 bg-[var(--tertiary)] hover:bg-[var(--secondary)] rounded-xl transition-all ml-auto"
             >
-                <Icon v-if="!isLoading" name="mdi:import" class="h-3 w-3" />
-                <Icon v-if="isLoading" name="mingcute:loading-3-fill" class="h-3 w-3 animate-spin" />
+                <Icon mode="svg" v-if="!isLoading" name="mdi:import" class="h-3 w-3" />
+                <Icon mode="svg" v-if="isLoading" name="mingcute:loading-3-fill" class="h-3 w-3 animate-spin" />
                 {{ isLoading ? 'Uploading' : 'Start Upload' }}
             </button>
             <button
@@ -22,8 +22,8 @@
                 @click="nextStep()"
                 class="flex items-center justify-center gap-1 px-3 py-2.5 bg-[var(--tertiary)] hover:bg-[var(--secondary)] rounded-xl transition-all ml-auto"
             >
-                <Icon v-if="!isLoading" name="formkit:arrowright" class="h-3 w-3" />
-                <Icon v-if="isLoading" name="mingcute:loading-3-fill" class="h-3 w-3 animate-spin" />
+                <Icon mode="svg" v-if="!isLoading" name="formkit:arrowright" class="h-3 w-3" />
+                <Icon mode="svg" v-if="isLoading" name="mingcute:loading-3-fill" class="h-3 w-3 animate-spin" />
                 {{ isLoading ? 'Lade' : 'Weiter' }}
             </button>
         </div>
@@ -59,14 +59,14 @@
                         @click="addLinksArray()"
                         class="flex items-center justify-center text-white bg-[var(--tertiary)] w-20 h-10 rounded-xl ml-auto"
                     >
-                        <Icon name="ic:baseline-plus" class="h-4 w-4" />
+                        <Icon mode="svg" name="ic:baseline-plus" class="h-4 w-4" />
                     </button>
                     <button
                         v-if="linksArray.length === index + 1 && index !== 0"
                         @click="removeLinksArray(index)"
                         class="flex items-center justify-center text-white bg-[var(--tertiary)] w-20 h-10 rounded-xl ml-1"
                     >
-                        <Icon name="material-symbols:delete" class="h-4 w-4" />
+                        <Icon mode="svg" name="material-symbols:delete" class="h-4 w-4" />
                     </button>
                 </div>
             </div>
@@ -126,7 +126,7 @@
             </div>
             <div v-for="(episode, index) in episodes" class="flex flex-row p-5 gap-2 bg-[var(--secondary)] rounded-xl">
                 <div @click="openFileInputBanner(index)" class="h-[125px] w-[200px] flex items-center justify-center bg-[var(--tertiary)] rounded-xl cursor-pointer">
-                    <Icon v-if="!episode.bannerObject && !episode.images?.banner" name="material-symbols:upload" class="h-10 w-10" />
+                    <Icon mode="svg" v-if="!episode.bannerObject && !episode.images?.banner" name="material-symbols:upload" class="h-10 w-10" />
                     <img v-if="episode.bannerObject" alt="Image" class="h-full w-full object-cover rounded" :src="episode.bannerObject" />
                     <img
                         v-if="!episode.bannerObject && episode.images && episode.images.banner"
@@ -164,7 +164,7 @@
                                 class="items-center justify-center text-white bg-[var(--tertiary)] w-20 h-10 rounded-xl"
                                 :class="episode.index ? 'hidden' : 'flex'"
                             >
-                                <Icon name="material-symbols:delete" class="h-4 w-4" />
+                                <Icon mode="svg" name="material-symbols:delete" class="h-4 w-4" />
                             </button>
                             <button
                                 v-if="episode.name.length === i + 1"
@@ -172,7 +172,7 @@
                                 class="items-center justify-center text-white bg-[var(--tertiary)] w-20 h-10 rounded-xl"
                                 :class="episode.index ? 'hidden' : 'flex'"
                             >
-                                <Icon name="ic:baseline-plus" class="h-4 w-4" />
+                                <Icon mode="svg" name="ic:baseline-plus" class="h-4 w-4" />
                             </button>
                         </div>
                     </div>
@@ -205,7 +205,7 @@
                                 class="items-center justify-center text-white bg-[var(--tertiary)] w-20 h-10 rounded-xl"
                                 :class="episode.index ? 'hidden' : 'flex'"
                             >
-                                <Icon name="material-symbols:delete" class="h-4 w-4" />
+                                <Icon mode="svg" name="material-symbols:delete" class="h-4 w-4" />
                             </button>
                             <button
                                 v-if="episode.description.length === i + 1"
@@ -213,7 +213,7 @@
                                 class="items-center justify-center text-white bg-[var(--tertiary)] w-20 h-10 rounded-xl"
                                 :class="episode.index ? 'hidden' : 'flex'"
                             >
-                                <Icon name="ic:baseline-plus" class="h-4 w-4" />
+                                <Icon mode="svg" name="ic:baseline-plus" class="h-4 w-4" />
                             </button>
                         </div>
                     </div>
@@ -287,14 +287,14 @@
                                 @click="deleteStreamFromArray(i, index)"
                                 class="flex items-center justify-center text-white bg-[var(--tertiary)] w-20 h-10 rounded-xl"
                             >
-                                <Icon name="material-symbols:delete" class="h-4 w-4" />
+                                <Icon mode="svg" name="material-symbols:delete" class="h-4 w-4" />
                             </button>
                             <button
                                 v-if="episode.episode_streams && episode.episode_streams.length === i + 1"
                                 @click="addDummyStreamToArray(index)"
                                 class="flex items-center justify-center text-white bg-[var(--tertiary)] w-20 h-10 rounded-xl"
                             >
-                                <Icon name="ic:baseline-plus" class="h-4 w-4" />
+                                <Icon mode="svg" name="ic:baseline-plus" class="h-4 w-4" />
                             </button>
                         </div>
                     </div>

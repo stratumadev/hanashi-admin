@@ -2,7 +2,7 @@
     <div class="relative flex flex-col ml-72 p-5 min-h-screen font-pjs font-bold">
         <div class="flex text-sm justify-between">
             <NuxtLink to="/hosters" class="flex items-center justify-center gap-1 px-3 py-2.5 bg-[var(--tertiary)] hover:bg-[var(--secondary)] rounded-xl transition-all">
-                <Icon name="raphael:arrowleft" class="h-3 w-3" />
+                <Icon mode="svg" name="raphael:arrowleft" class="h-3 w-3" />
                 Zurück
             </NuxtLink>
             <button
@@ -10,8 +10,8 @@
                 class="flex items-center justify-center gap-1 px-3 py-2.5 bg-[var(--tertiary)] hover:bg-[var(--secondary)] rounded-xl transition-all"
                 :disabled="!hoster.name || !hoster.domains || hoster.domains.length === 0 || !hoster.embed_path"
             >
-                <Icon v-if="!isLoading" name="material-symbols:save-sharp" class="h-3 w-3" />
-                <Icon v-if="isLoading" name="mingcute:loading-3-fill" class="h-3 w-3 animate-spin" />
+                <Icon mode="svg" v-if="!isLoading" name="material-symbols:save-sharp" class="h-3 w-3" />
+                <Icon mode="svg" v-if="isLoading" name="mingcute:loading-3-fill" class="h-3 w-3 animate-spin" />
                 {{ !hoster.name || !hoster.domains || hoster.domains.length === 0 || !hoster.embed_path ? 'Fülle zuerst die Felder aus' : isLoading ? 'Erstelle' : 'Erstellen' }}
             </button>
         </div>
@@ -19,7 +19,7 @@
             <div class="flex flex-row items-center gap-5 py-4">
                 <div class="text-base w-48">Bild</div>
                 <div @click="openFileInputImage()" class="h-[100px] w-[100px] flex items-center justify-center bg-[var(--tertiary)] rounded-xl cursor-pointer">
-                    <Icon v-if="!selectedImage" name="material-symbols:upload" class="h-10 w-10" />
+                    <Icon mode="svg" v-if="!selectedImage" name="material-symbols:upload" class="h-10 w-10" />
                     <img v-if="selectedImage" alt="Image" class="h-full w-full object-cover rounded" :src="selectedImage" />
                 </div>
                 <input type="file" ref="fileInputImage" @change="handleFileUploadImage" accept="image/png, image/jpeg, image/webp" class="hidden" />
@@ -49,7 +49,7 @@
                             placeholder="Domain / voe.sx"
                         />
                         <button @click="deleteHosterFromArray(index)" class="flex items-center justify-center text-white bg-[var(--tertiary)] w-20 h-10 rounded-xl">
-                            <Icon name="material-symbols:delete" class="h-4 w-4" />
+                            <Icon mode="svg" name="material-symbols:delete" class="h-4 w-4" />
                         </button>
                     </div>
                     <div class="relative w-full flex flex-row gap-2 max-w-xl">
@@ -60,7 +60,7 @@
                             placeholder="Domain / voe.sx"
                         />
                         <button @click="addDummyHosterToArray()" class="flex items-center justify-center text-white bg-[var(--tertiary)] w-20 h-10 rounded-xl">
-                            <Icon name="ic:baseline-plus" class="h-4 w-4" />
+                            <Icon mode="svg" name="ic:baseline-plus" class="h-4 w-4" />
                         </button>
                     </div>
                 </div>

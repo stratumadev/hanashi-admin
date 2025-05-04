@@ -2,7 +2,7 @@
     <div class="relative flex flex-col ml-72 p-5 min-h-screen font-pjs font-bold">
         <div class="flex text-sm">
             <NuxtLink :to="`/calendar`" class="flex items-center justify-center gap-1 px-3 py-2.5 bg-[var(--tertiary)] hover:bg-[var(--secondary)] rounded-xl transition-all">
-                <Icon name="raphael:arrowleft" class="h-3 w-3" />
+                <Icon mode="svg" name="raphael:arrowleft" class="h-3 w-3" />
                 Zurück
             </NuxtLink>
             <NuxtLink
@@ -10,22 +10,22 @@
                 :to="`/anime/${airing.item}/seasons/${airing.season}/episodes/masslinker`"
                 class="flex items-center justify-center gap-1 px-3 py-2.5 bg-[var(--tertiary)] hover:bg-[var(--secondary)] rounded-xl transition-all ml-auto"
             >
-                <Icon name="game-icons:fleshy-mass" class="h-4 w-4" />
+                <Icon mode="svg" name="game-icons:fleshy-mass" class="h-4 w-4" />
                 Masslinker
             </NuxtLink>
             <button
                 @click="deleteAiring()"
                 class="flex items-center justify-center gap-1 px-3 py-2.5 bg-[var(--tertiary)] hover:bg-[var(--secondary)] rounded-xl transition-all ml-3"
             >
-                <Icon name="material-symbols:delete" class="h-3 w-3" />
+                <Icon mode="svg" name="material-symbols:delete" class="h-3 w-3" />
                 Löschen
             </button>
             <button
                 @click="updateAiring()"
                 class="flex items-center justify-center gap-1 px-3 py-2.5 bg-[var(--tertiary)] hover:bg-[var(--secondary)] rounded-xl transition-all ml-3"
             >
-                <Icon v-if="!isLoading" name="material-symbols:save-sharp" class="h-3 w-3" />
-                <Icon v-if="isLoading" name="mingcute:loading-3-fill" class="h-3 w-3 animate-spin" />
+                <Icon mode="svg" v-if="!isLoading" name="material-symbols:save-sharp" class="h-3 w-3" />
+                <Icon mode="svg" v-if="isLoading" name="mingcute:loading-3-fill" class="h-3 w-3 animate-spin" />
                 {{ isLoading ? 'Speichere' : 'Speichern' }}
             </button>
         </div>

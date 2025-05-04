@@ -2,7 +2,7 @@
     <div class="relative flex flex-col gap-3 ml-72 p-5 min-h-screen font-pjs font-bold">
         <div class="flex flex-row font-dm text-sm justify-end">
             <NuxtLink to="/hoster/create" class="flex items-center justify-center gap-1 px-3 py-2.5 bg-[var(--tertiary)] hover:bg-[var(--secondary)] rounded-xl transition-all">
-                <Icon name="ic:baseline-plus" class="h-4 w-4" />
+                <Icon mode="svg" name="ic:baseline-plus" class="h-4 w-4" />
                 Erstellen
             </NuxtLink>
         </div>
@@ -23,14 +23,14 @@
                             @click="switchHosters(hoster.id, hosters[i - 1].id)"
                             class="px-3 py-2 bg-[var(--main)] rounded-xl flex items-center justify-center"
                         >
-                            <Icon name="raphael:arrowup" class="h-4 w-4" />
+                            <Icon mode="svg" name="raphael:arrowup" class="h-4 w-4" />
                         </button>
                         <button
                             v-if="hosters[i + 1]"
                             @click="switchHosters(hoster.id, hosters[i + 1].id)"
                             class="px-3 py-2 bg-[var(--main)] rounded-xl flex items-center justify-center"
                         >
-                            <Icon name="raphael:arrowdown" class="h-4 w-4" />
+                            <Icon mode="svg" name="raphael:arrowdown" class="h-4 w-4" />
                         </button>
                     </div>
                     <NuxtLink :to="`/hoster/${hoster.id}`" class="text-sm flex-1 flex justify-center items-center">
@@ -40,12 +40,12 @@
                         {{ hoster.domains[0].domain }}
                     </NuxtLink>
                     <NuxtLink :to="`/hoster/${hoster.id}`" class="absolute top-1/2 -translate-y-1/2 right-3">
-                        <Icon name="ion:open-outline" class="h-4 w-4" />
+                        <Icon mode="svg" name="ion:open-outline" class="h-4 w-4" />
                     </NuxtLink>
                 </div>
             </div>
             <div v-if="!hosters && isFetching" class="bg-[var(--secondary)] w-full h-96 flex flex-col gap-2 items-center justify-center rounded-xl appear">
-                <Icon name="mdi:loading" class="h-8 w-8 animate-spin" />
+                <Icon mode="svg" name="mdi:loading" class="h-8 w-8 animate-spin" />
                 <div class="text-sm">Bitte warten</div>
             </div>
         </div>

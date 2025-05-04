@@ -2,7 +2,7 @@
     <div class="relative flex flex-col ml-72 p-5 min-h-screen font-pjs font-bold">
         <div class="flex text-sm justify-between">
             <NuxtLink to="/ranks" class="flex items-center justify-center gap-1 px-3 py-2.5 bg-[var(--tertiary)] hover:bg-[var(--secondary)] rounded-xl transition-all">
-                <Icon name="raphael:arrowleft" class="h-3 w-3" />
+                <Icon mode="svg" name="raphael:arrowleft" class="h-3 w-3" />
                 Zurück
             </NuxtLink>
             <button
@@ -11,7 +11,7 @@
                 class="flex items-center justify-center gap-1 px-3 py-2.5 bg-[var(--tertiary)] hover:bg-[var(--secondary)] rounded-xl transition-all"
                 :class="isSuccessful ? 'bg-[var(--secondary)] hover:bg-[var(--secondary)]' : 'bg-[var(--secondary)]'"
             >
-                <Icon name="material-symbols:save-sharp" class="h-3 w-3" />
+                <Icon mode="svg" name="material-symbols:save-sharp" class="h-3 w-3" />
                 {{ isSuccessful ? 'Erstellt' : 'Erstellen' }}
             </button>
         </div>

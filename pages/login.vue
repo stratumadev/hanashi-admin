@@ -13,7 +13,7 @@
                 class="bg-white disabled:bg-[#a3a3a3] py-3 px-3 rounded-xl mt-2 hover:bg-[#ffffffad] transition-all duration-300 flex flex-row items-center justify-center gap-1"
                 :disabled="isLoggingIn || !token"
             >
-                <Icon v-if="isLoggingIn" name="line-md:loading-loop" class="h-3.5 w-3.5" />
+                <Icon mode="svg" v-if="isLoggingIn" name="line-md:loading-loop" class="h-3.5 w-3.5" />
                 Login
             </button>
         </div>

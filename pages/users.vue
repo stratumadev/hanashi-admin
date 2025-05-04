@@ -22,12 +22,12 @@
                         {{ user.displayname }}
                     </div>
                     <div class="absolute top-1/2 -translate-y-1/2 right-3">
-                        <Icon name="ion:open-outline" class="h-4 w-4" />
+                        <Icon mode="svg" name="ion:open-outline" class="h-4 w-4" />
                     </div>
                 </NuxtLink>
             </div>
             <div v-if="!users && isFetching" class="bg-[var(--secondary)] w-full h-96 flex flex-col gap-2 items-center justify-center rounded-xl appear">
-                <Icon name="mdi:loading" class="h-8 w-8 animate-spin" />
+                <Icon mode="svg" name="mdi:loading" class="h-8 w-8 animate-spin" />
                 <div class="text-sm">Bitte warten</div>
             </div>
         </div>

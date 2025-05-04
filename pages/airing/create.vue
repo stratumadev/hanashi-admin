@@ -2,7 +2,7 @@
     <div class="relative flex flex-col ml-72 p-5 min-h-screen font-pjs font-bold">
         <div class="flex text-sm">
             <NuxtLink :to="`/calendar`" class="flex items-center justify-center gap-1 px-3 py-2.5 bg-[var(--tertiary)] hover:bg-[var(--secondary)] rounded-xl transition-all">
-                <Icon name="raphael:arrowleft" class="h-3 w-3" />
+                <Icon mode="svg" name="raphael:arrowleft" class="h-3 w-3" />
                 Zurück
             </NuxtLink>
             <button
@@ -10,8 +10,8 @@
                 @click="((airings = []), nextStep(), (step = 2))"
                 class="flex items-center justify-center gap-1 px-3 py-2.5 bg-[var(--tertiary)] hover:bg-[var(--secondary)] rounded-xl transition-all ml-auto"
             >
-                <Icon v-if="!isLoading" name="formkit:arrowright" class="h-3 w-3" />
-                <Icon v-if="isLoading" name="mingcute:loading-3-fill" class="h-3 w-3 animate-spin" />
+                <Icon mode="svg" v-if="!isLoading" name="formkit:arrowright" class="h-3 w-3" />
+                <Icon mode="svg" v-if="isLoading" name="mingcute:loading-3-fill" class="h-3 w-3 animate-spin" />
                 {{ isLoading ? 'Lade' : 'Weiter' }}
             </button>
             <button
@@ -19,8 +19,8 @@
                 @click="createAirings()"
                 class="flex items-center justify-center gap-1 px-3 py-2.5 bg-[var(--tertiary)] hover:bg-[var(--secondary)] rounded-xl transition-all ml-auto"
             >
-                <Icon v-if="!isLoading" name="material-symbols:save-sharp" class="h-3 w-3" />
-                <Icon v-if="isLoading" name="mingcute:loading-3-fill" class="h-3 w-3 animate-spin" />
+                <Icon mode="svg" v-if="!isLoading" name="material-symbols:save-sharp" class="h-3 w-3" />
+                <Icon mode="svg" v-if="isLoading" name="mingcute:loading-3-fill" class="h-3 w-3 animate-spin" />
                 {{ isLoading ? 'Erstelle' : 'Erstellen' }}
             </button>
         </div>
@@ -39,7 +39,7 @@
                     </div>
                     <div class="flex flex-row">
                         <div class="hidden lg:flex relative h-full rounded-lg border-2 border-white border-opacity-40 text-sm text-[#ffffffaf]" ref="searchContainer">
-                            <Icon name="ic:outline-search" class="h-5 w-5 absolute top-1/2 -translate-y-1/2 left-2.5" />
+                            <Icon mode="svg" name="ic:outline-search" class="h-5 w-5 absolute top-1/2 -translate-y-1/2 left-2.5" />
                             <input
                                 v-model="search"
                                 type="text"
@@ -56,7 +56,7 @@
                                         : ''
                                 "
                             />
-                            <Icon v-if="isFetching" name="mdi:loading" class="h-5 w-5 absolute top-1/4 right-1.5 animate-spin" />
+                            <Icon mode="svg" v-if="isFetching" name="mdi:loading" class="h-5 w-5 absolute top-1/4 right-1.5 animate-spin" />
                             <div
                                 v-if="isSearchActive && '/search' !== route.path"
                                 class="absolute top-full left-0 w-full rounded-lg mt-2 border-2 border-white border-opacity-40 text-sm bg-[#292929c0] z-10 flex flex-col p-2 backdrop-blur-sm"

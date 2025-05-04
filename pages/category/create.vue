@@ -2,7 +2,7 @@
     <div class="relative flex flex-col ml-72 p-5 min-h-screen font-pjs font-bold">
         <div class="flex text-sm justify-between">
             <NuxtLink to="/categories" class="flex items-center justify-center gap-1 px-3 py-2.5 bg-[var(--tertiary)] hover:bg-[var(--secondary)] rounded-xl transition-all">
-                <Icon name="raphael:arrowleft" class="h-3 w-3" />
+                <Icon mode="svg" name="raphael:arrowleft" class="h-3 w-3" />
                 Zurück
             </NuxtLink>
             <button
@@ -10,8 +10,8 @@
                 class="flex items-center justify-center gap-1 px-3 py-2.5 bg-[var(--tertiary)] hover:bg-[var(--secondary)] rounded-xl transition-all"
                 :disabled="!category.name || !category.scene || !category.name || category.name.length === 0"
             >
-                <Icon v-if="!isLoading" name="material-symbols:save-sharp" class="h-3 w-3" />
-                <Icon v-if="isLoading" name="mingcute:loading-3-fill" class="h-3 w-3 animate-spin" />
+                <Icon mode="svg" v-if="!isLoading" name="material-symbols:save-sharp" class="h-3 w-3" />
+                <Icon mode="svg" v-if="isLoading" name="mingcute:loading-3-fill" class="h-3 w-3 animate-spin" />
                 {{ !category.name || !category.scene || !category.name || category.name.length === 0 ? 'Fülle zuerst die Felder aus' : isLoading ? 'Erstelle' : 'Erstellen' }}
             </button>
         </div>
@@ -19,7 +19,7 @@
             <div class="flex flex-row items-center gap-5 py-4">
                 <div class="text-base w-48">Banner</div>
                 <div @click="openFileInputBanner()" class="h-[250px] w-[400px] flex items-center justify-center bg-[var(--tertiary)] rounded-xl cursor-pointer">
-                    <Icon v-if="!selectedBanner" name="material-symbols:upload" class="h-10 w-10" />
+                    <Icon mode="svg" v-if="!selectedBanner" name="material-symbols:upload" class="h-10 w-10" />
                     <img v-if="selectedBanner" alt="Image" class="h-full w-full object-cover rounded" :src="selectedBanner" />
                 </div>
                 <input type="file" ref="fileInputBanner" @change="handleFileUploadBanner" accept="image/png, image/jpeg, image/webp" class="hidden" />
@@ -27,7 +27,7 @@
             <div class="flex flex-row items-center gap-5 py-4">
                 <div class="text-base w-48">Cover</div>
                 <div @click="openFileInputCover()" class="h-[300px] w-[200px] flex items-center justify-center bg-[var(--tertiary)] rounded-xl cursor-pointer">
-                    <Icon v-if="!selectedCover" name="material-symbols:upload" class="h-10 w-10" />
+                    <Icon mode="svg" v-if="!selectedCover" name="material-symbols:upload" class="h-10 w-10" />
                     <img v-if="selectedCover" alt="Image" class="h-full w-full object-cover rounded" :src="selectedCover" />
                 </div>
                 <input type="file" ref="fileInputCover" @change="handleFileUploadCover" accept="image/png, image/jpeg, image/webp" class="hidden" />
@@ -58,7 +58,7 @@
                         </select>
                         <input v-model="n.name" class="w-full px-3 py-2.5 max-w-sm text-white bg-[var(--tertiary)] rounded-xl focus:outline-none" type="text" placeholder="Name" />
                         <button @click="deleteNameFromArray(n)" class="flex items-center justify-center text-white bg-[var(--tertiary)] w-20 h-10 rounded-xl">
-                            <Icon name="material-symbols:delete" class="h-4 w-4" />
+                            <Icon mode="svg" name="material-symbols:delete" class="h-4 w-4" />
                         </button>
                     </div>
                     <div class="relative w-full flex flex-row gap-2 max-w-xl">
@@ -74,7 +74,7 @@
                             placeholder="Name"
                         />
                         <button @click="addDummyNameToArray()" class="flex items-center justify-center text-white bg-[var(--tertiary)] w-20 h-10 rounded-xl">
-                            <Icon name="ic:baseline-plus" class="h-4 w-4" />
+                            <Icon mode="svg" name="ic:baseline-plus" class="h-4 w-4" />
                         </button>
                     </div>
                 </div>
@@ -95,7 +95,7 @@
                             placeholder="Description"
                         />
                         <button @click="deleteDescriptionFromArray(d)" class="flex items-center justify-center text-white bg-[var(--tertiary)] w-20 h-10 rounded-xl">
-                            <Icon name="material-symbols:delete" class="h-4 w-4" />
+                            <Icon mode="svg" name="material-symbols:delete" class="h-4 w-4" />
                         </button>
                     </div>
                     <div class="relative w-full flex flex-row gap-2 max-w-2xl">
@@ -111,7 +111,7 @@
                             placeholder="Description"
                         />
                         <button @click="addDummyDescriptionToArray()" class="flex items-center justify-center text-white bg-[var(--tertiary)] w-20 h-10 rounded-xl">
-                            <Icon name="ic:baseline-plus" class="h-4 w-4" />
+                            <Icon mode="svg" name="ic:baseline-plus" class="h-4 w-4" />
                         </button>
                     </div>
                 </div>
@@ -128,7 +128,7 @@
                         <input v-model="r.name" class="w-full px-3 py-2.5 max-w-sm text-white bg-[var(--tertiary)] rounded-xl focus:outline-none" type="text" placeholder="Name" />
                         <input v-model="r.url" class="w-full px-3 py-2.5 max-w-sm text-white bg-[var(--tertiary)] rounded-xl focus:outline-none" type="text" placeholder="URL" />
                         <button @click="deleteReferenceFromArray(r)" class="flex items-center justify-center text-white bg-[var(--tertiary)] w-20 h-10 rounded-xl">
-                            <Icon name="material-symbols:delete" class="h-4 w-4" />
+                            <Icon mode="svg" name="material-symbols:delete" class="h-4 w-4" />
                         </button>
                     </div>
                     <div class="relative w-full flex flex-row gap-2 max-w-xl">
@@ -150,7 +150,7 @@
                             placeholder="URL"
                         />
                         <button @click="addDummyReferenceToArray()" class="flex items-center justify-center text-white bg-[var(--tertiary)] w-20 h-10 rounded-xl">
-                            <Icon name="ic:baseline-plus" class="h-4 w-4" />
+                            <Icon mode="svg" name="ic:baseline-plus" class="h-4 w-4" />
                         </button>
                     </div>
                 </div>

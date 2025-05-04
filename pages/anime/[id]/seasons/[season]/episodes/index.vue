@@ -5,21 +5,21 @@
                 :to="`/anime/${route.params.id}/seasons/${route.params.season}`"
                 class="flex items-center justify-center gap-1 px-3 py-2.5 bg-[var(--tertiary)] hover:bg-[var(--secondary)] rounded-xl transition-all"
             >
-                <Icon name="raphael:arrowleft" class="h-3 w-3" />
+                <Icon mode="svg" name="raphael:arrowleft" class="h-3 w-3" />
                 Zurück
             </NuxtLink>
             <NuxtLink
                 :to="`/anime/${route.params.id}/seasons/${route.params.season}/episodes/create`"
                 class="flex items-center justify-center gap-1 px-3 py-2.5 bg-[var(--tertiary)] hover:bg-[var(--secondary)] rounded-xl transition-all ml-auto"
             >
-                <Icon name="ic:baseline-plus" class="h-4 w-4" />
+                <Icon mode="svg" name="ic:baseline-plus" class="h-4 w-4" />
                 Erstellen
             </NuxtLink>
             <NuxtLink
                 :to="`/anime/${route.params.id}/seasons/${route.params.season}/episodes/masslinker`"
                 class="flex items-center justify-center gap-1 px-3 py-2.5 bg-[var(--tertiary)] hover:bg-[var(--secondary)] rounded-xl transition-all ml-3"
             >
-                <Icon name="game-icons:fleshy-mass" class="h-4 w-4" />
+                <Icon mode="svg" name="game-icons:fleshy-mass" class="h-4 w-4" />
                 Masslinker
             </NuxtLink>
         </div>
@@ -40,14 +40,14 @@
                             @click="switchEpisode(episode.id, episodes[i - 1].id)"
                             class="px-3 py-2 bg-[var(--main)] rounded-xl flex items-center justify-center"
                         >
-                            <Icon name="raphael:arrowup" class="h-4 w-4" />
+                            <Icon mode="svg" name="raphael:arrowup" class="h-4 w-4" />
                         </button>
                         <button
                             v-if="episodes[i + 1]"
                             @click="switchEpisode(episode.id, episodes[i + 1].id)"
                             class="px-3 py-2 bg-[var(--main)] rounded-xl flex items-center justify-center"
                         >
-                            <Icon name="raphael:arrowdown" class="h-4 w-4" />
+                            <Icon mode="svg" name="raphael:arrowdown" class="h-4 w-4" />
                         </button>
                     </div>
                     <NuxtLink :to="`/anime/${route.params.id}/seasons/${route.params.season}/episodes/${episode.id}`" class="text-sm flex-1 flex justify-center items-center">
@@ -57,12 +57,12 @@
                         {{ episode.episode_number }}
                     </NuxtLink>
                     <NuxtLink :to="`/anime/${route.params.id}/seasons/${route.params.season}/episodes/${episode.id}`" class="absolute top-1/2 -translate-y-1/2 right-3">
-                        <Icon name="ion:open-outline" class="h-4 w-4" />
+                        <Icon mode="svg" name="ion:open-outline" class="h-4 w-4" />
                     </NuxtLink>
                 </div>
             </div>
             <div v-if="!episodes && isFetching" class="bg-[var(--secondary)] w-full h-96 flex flex-col gap-2 items-center justify-center rounded-xl appear">
-                <Icon name="mdi:loading" class="h-8 w-8 animate-spin" />
+                <Icon mode="svg" name="mdi:loading" class="h-8 w-8 animate-spin" />
                 <div class="text-sm">Bitte warten</div>
             </div>
         </div>

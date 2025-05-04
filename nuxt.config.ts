@@ -1,41 +1,47 @@
 export default defineNuxtConfig({
     typescript: {
-        typeCheck: true,
+        typeCheck: true
     },
 
-    modules: ["@nuxtjs/tailwindcss", "@nuxtjs/google-fonts", "@nuxt/icon"],
+    modules: ['@nuxtjs/tailwindcss', '@nuxtjs/google-fonts', '@nuxt/icon'],
 
     googleFonts: {
         families: {
-            "Plus+Jakarta+Sans": {
-                wght: "200..800",
-            },
-        },
+            'Plus+Jakarta+Sans': {
+                wght: '200..800'
+            }
+        }
     },
 
     app: {
         head: {
             htmlAttrs: {
-                lang: "en",
+                lang: 'en'
             },
-            charset: "utf-8",
-            viewport: "width=device-width, initial-scale=1",
-        },
+            charset: 'utf-8',
+            viewport: 'width=device-width, initial-scale=1'
+        }
     },
 
     runtimeConfig: {
         public: {
-            origin: "",
-            origincdn: "",
-        },
+            origin: '',
+            origincdn: ''
+        }
     },
 
     vue: {
         compilerOptions: {
-            isCustomElement: (tag) => tag.includes("-"),
-        },
+            isCustomElement: (tag) => tag.includes('-')
+        }
     },
 
-    plugins: [{ src: "~/plugins/altcha.ts", mode: "client" }],
-    compatibilityDate: "2024-08-07",
-});
+    icon: {
+        clientBundle: {
+            scan: true
+        }
+    },
+
+    plugins: [{ src: '~/plugins/altcha.ts', mode: 'client' }],
+    compatibilityDate: '2024-08-07'
+})
